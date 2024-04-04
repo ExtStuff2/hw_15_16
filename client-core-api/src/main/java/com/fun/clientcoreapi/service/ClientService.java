@@ -17,21 +17,28 @@ public class ClientService {
     public List<Client> getAllClients() {
         return clientRepository.findAll();
     }
+
     public Client createClient(Client request) {
-         return clientRepository.save(request);
+        return clientRepository.save(request);
     }
-    public Client findClientById(UUID clientId)
-    {
+
+    public Client findClientById(UUID clientId) {
         return clientRepository.getReferenceById(clientId);
     }
 
-    public Client updateClientById(Client client)
-    {
-        if(clientRepository.existsById(client.getClientId()))
-        {
+    public Client updateClientById(Client client) {
+        if (clientRepository.existsById(client.getClientId())) {
             return clientRepository.save(client);
         }
         return new Client();
+    }
+
+    public void deleteClient(Client client) {
+        clientRepository.delete(client);
+    }
+
+    public void deleteClientById(UUID clientId) {
+        clientRepository.deleteById(clientId);
     }
 
 

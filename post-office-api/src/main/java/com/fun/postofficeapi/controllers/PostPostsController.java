@@ -15,8 +15,8 @@ public class PostPostsController {
 
     private final PostPostsProxy postPostProxy;
 
-    public PostPostsController(PostPostsProxy possPostsProxy) {
-        this.postPostProxy = possPostsProxy;
+    public PostPostsController(PostPostsProxy postPostsProxy) {
+        this.postPostProxy = postPostsProxy;
     }
 
 
@@ -28,5 +28,15 @@ public class PostPostsController {
     @GetMapping("/posts/detail/{postId}")
     public List<PostDetails> getPostDetailsByPostId(@PathVariable UUID postId) {
         return postPostProxy.getPostDetailsByPostId(postId).getBody();
+    }
+
+    @GetMapping("/posts/{postId}")
+    public Post getPostById(@PathVariable UUID postId) {
+        return postPostProxy.getPostById(postId).getBody();
+    }
+
+    @GetMapping("/posts/check")
+    public String checkPost() {
+        return postPostProxy.checkPost().getBody();
     }
 }

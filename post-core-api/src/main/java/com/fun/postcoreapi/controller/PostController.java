@@ -17,6 +17,11 @@ public class PostController {
 
     private final PostService postService;
 
+    @GetMapping("/check")
+    public String checkPostCoreApi() {
+        return "service is up";
+    }
+
     @GetMapping
     public List<Post> getAllPosts(
     ) {
@@ -40,6 +45,11 @@ public class PostController {
     @GetMapping("/detail/{postId}")
     public List<PostDetails> getPostDetailsByPostId(@PathVariable UUID postId) {
         return postService.getPostDetailsByPostId(postId);
+    }
+
+    @GetMapping("/post/{postId}")
+    public Post getPostById(@PathVariable UUID postId) {
+        return postService.findPostById(postId);
     }
 
 }

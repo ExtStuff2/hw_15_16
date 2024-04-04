@@ -4,32 +4,32 @@ import java.util.UUID;
 
 public class Client {
 
-  private UUID clientId;
-  private String clientName;
+    private UUID clientId;
+    private String clientName;
 
-  private String clientSurname;
+    private String clientSurname;
 
-  public UUID getClientId() {
-    return clientId;
-  }
+    public UUID getClientId() {
+        return clientId;
+    }
 
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
-  }
+    public void setClientId(UUID clientId) {
+        this.clientId = clientId;
+    }
 
-  public String getClientName() {
-    return clientName;
-  }
+    public String getClientName() {
+        return clientName;
+    }
 
-  public void setClientName(String clientName) {
-    this.clientName = clientName;
-  }
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
 
-  public String getClientSurname() {
-    return clientSurname;
-  }
+    public String getClientSurname() {
+        return clientSurname;
+    }
 
-  public void setClientSurname(String clientSurname) {
-    this.clientSurname = clientSurname;
-  }
+    public void setClientSurname(String clientSurname) {
+        this.clientSurname = clientSurname;
+    }
 }

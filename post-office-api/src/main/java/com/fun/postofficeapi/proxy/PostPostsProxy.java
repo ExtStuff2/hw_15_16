@@ -19,4 +19,10 @@ public interface PostPostsProxy {
     @GetMapping("/posts/detail/{postId}")
     ResponseEntity<List<PostDetails>> getPostDetailsByPostId(@PathVariable UUID postId);
 
+    @GetMapping("posts/post/{postId}")
+    ResponseEntity<Post> getPostById(@PathVariable UUID postId);
+
+    @GetMapping("posts/check")
+    ResponseEntity<String> checkPost();
+
 }
